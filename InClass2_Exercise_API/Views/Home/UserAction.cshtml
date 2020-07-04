@@ -1,0 +1,104 @@
+﻿@model InClass2_Exercise_API.Models.PersonModel
+
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserActionTab</title>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+
+        table {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+            table th {
+                background-color: #B8DBFD;
+                color: #333;
+                font-weight: bold;
+            }
+
+            table th, table td {
+                padding: 5px;
+                border: 1px solid #ccc;
+            }
+
+            table, table table td {
+                border: 0px solid #ccc;
+            }
+
+        input[type=text], select {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+
+    <!--
+    <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th colspan="2" align="center">Person Details</th>
+            </tr>
+            <tr>
+                <td>Person Name: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>City: </td>
+                <td>
+                    @Html.TextBoxFor(m => m.City)
+                </td>
+            </tr>
+            <tr>
+                <td>Will you be Attending in Person: </td>
+                <td>
+                    @Html.DropDownListFor(m => m.Attending, new List<SelectListItem>
+                                       { new SelectListItem{Text="Yes", Value="Y"},
+                         new SelectListItem{Text="No", Value="N"}}, "Please select")
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    -->
+        <form asp-action="UserAction" method="post">
+            <p>
+                <label asp-for="Name">Your name:</label>
+                <input asp-for="Name" />
+            </p>
+            <p>
+                <label asp-for="City">Your City:</label>
+                <input asp-for="City" />
+            </p>
+            <p>
+                <label>Will you attend in Person?</label>
+                <select asp-for="Attending">
+                    <option value="">
+                        Choose an option
+                    </option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                </select>
+            </p>
+            <button type="submit">Submit Response</button>
+        </form>
+
+ 
+    </body>
+    </html>

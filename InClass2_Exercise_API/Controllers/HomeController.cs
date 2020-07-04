@@ -72,6 +72,30 @@ namespace InClass2_Exercise_API.Controllers
         {
             return View();
         }
+        /*public IActionResult UserAction(PersonModel person)
+        {
+            
+            string name = person.Name;
+            string city = person.City;
+            string gender = person.Attending;
+
+            return View();
+        }*/
+
+        [HttpGet]
+        public ViewResult UserAction()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult UserAction(PersonModel person)
+        {
+            PersonModel.AddResponse(person);
+            return View("UserActionResponse", person);
+
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
