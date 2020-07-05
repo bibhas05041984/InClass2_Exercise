@@ -1,0 +1,35 @@
+﻿@model InClass2_Exercise_API.Models.PersonModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserActionResponse</title>
+</head>
+<body>
+    @{
+        ViewData["Title"] = "Response from System";
+    }
+    <h1>@ViewData["Title"]</h1>
+    <h2>Assignment:Razor form</h2>
+    <h4>This Page returns a response.</h4>
+    <p>
+        <h1>
+            Thank you, @Model.Name!
+        </h1>
+        @if (Model.Attending == "Y")
+        {
+            @:It's great that you're coming. We will see you in Class!
+        }
+        @if (Model.Attending == "N")
+        {
+            @:Great Decision, better to be safe than Sorry!
+        }
+        else
+        {
+            @:I think you didnt enter any input!
+        }
+    </p>
+
+</body>
+</html>

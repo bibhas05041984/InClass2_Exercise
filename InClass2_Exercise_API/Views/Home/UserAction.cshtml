@@ -44,38 +44,7 @@
     <h1>@ViewData["Title"]</h1>
     <h2>Assignment:Razor form</h2>
     <h4>This Page accepts data from users and upon submition sends back a response.</h4>
-    <!--
-    <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th colspan="2" align="center">Person Details</th>
-            </tr>
-            <tr>
-                <td>Person Name: </td>
-                <td>
-                    @Html.TextBoxFor(m => m.Name)
-                </td>
-            </tr>
-            <tr>
-                <td>City: </td>
-                <td>
-                    @Html.TextBoxFor(m => m.City)
-                </td>
-            </tr>
-            <tr>
-                <td>Will you be Attending in Person: </td>
-                <td>
-                    @Html.DropDownListFor(m => m.Attending, new List<SelectListItem>
-                                       { new SelectListItem{Text="Yes", Value="Y"},
-                         new SelectListItem{Text="No", Value="N"}}, "Please select")
-                </td>
-            </tr>
 
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Submit" /></td>
-            </tr>
-        </table>
-    -->
     <form asp-action="UserAction" method="post">
         <p>
             <label asp-for="Name">Your name:</label>
