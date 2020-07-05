@@ -1,12 +1,6 @@
 ﻿@model InClass2_Exercise_API.Models.PersonModel
 
-@{
-    Layout = null;
-
-}
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -44,7 +38,12 @@
     </style>
 </head>
 <body>
-
+    @{
+        ViewData["Title"] = "User Action Assignment";
+    }
+    <h1>@ViewData["Title"]</h1>
+    <h2>Assignment:Razor form</h2>
+    <h4>This Page accepts data from users and upon submition sends back a response.</h4>
     <!--
     <table cellpadding="0" cellspacing="0">
             <tr>
@@ -77,28 +76,28 @@
             </tr>
         </table>
     -->
-        <form asp-action="UserAction" method="post">
-            <p>
-                <label asp-for="Name">Your name:</label>
-                <input asp-for="Name" />
-            </p>
-            <p>
-                <label asp-for="City">Your City:</label>
-                <input asp-for="City" />
-            </p>
-            <p>
-                <label>Will you attend in Person?</label>
-                <select asp-for="Attending">
-                    <option value="">
-                        Choose an option
-                    </option>
-                    <option value="Y">Yes</option>
-                    <option value="N">No</option>
-                </select>
-            </p>
-            <button type="submit">Submit Response</button>
-        </form>
+    <form asp-action="UserAction" method="post">
+        <p>
+            <label asp-for="Name">Your name:</label>
+            <input asp-for="Name" />
+        </p>
+        <p>
+            <label asp-for="City">Your City:</label>
+            <input asp-for="City" />
+        </p>
+        <p>
+            <label>Will you attend in Person?</label>
+            <select asp-for="Attending">
+                <option value="">
+                    Choose an option
+                </option>
+                <option value="Y">Yes</option>
+                <option value="N">No</option>
+            </select>
+        </p>
+        <button type="submit">Submit Response</button>
+    </form>
 
- 
-    </body>
+
+</body>
     </html>
